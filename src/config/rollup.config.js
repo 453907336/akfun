@@ -7,6 +7,7 @@ const json = require('@rollup/plugin-json'); // 识别json类型文件
 const image = require('@rollup/plugin-image'); // 图片处理器
 const { terser } = require('rollup-plugin-terser'); // 压缩
 const alias = require('@rollup/plugin-alias'); // 简写配置
+// const typescript = require('@rollup/plugin-typescript'); // ts处理器
 // css相关处理器
 const postcss = require('rollup-plugin-postcss');
 // 处理css定义的变量
@@ -40,6 +41,7 @@ module.exports = function (fileName) {
     input: rollupInput,
     // external：将模块视为外部模块，不会打包在库中（在akfun.config.js中配置）
     plugins: [
+      // typescript(),
       alias({
         resolve: config.webpack.resolve.extensions,
         extensions: config.webpack.resolve.extensions,
